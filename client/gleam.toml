@@ -11,9 +11,9 @@ version = "0.1.0"
 target = "javascript"
 
 [dependencies]
-gleam_stdlib = "~> 0.31"
-gleam_javascript = "~> 0.6"
-lustre = "~> 3.0"
+gleam_stdlib = "~> 0.33"
+gleam_javascript = "~> 0.7"
+lustre = "~> 3.1"
 
 [dev-dependencies]
-gleeunit = "~> 0.10"
+gleeunit = "~> 1.0"
