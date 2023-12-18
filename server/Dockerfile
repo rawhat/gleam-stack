@@ -13,6 +13,7 @@ ADD https://github.com/watchexec/watchexec/releases/download/v1.24.0/watchexec-1
 RUN tar xvf watchexec.tar.gz && chmod +x watchexec-1.24.0-x86_64-unknown-linux-musl/watchexec && mv watchexec-1.24.0-x86_64-unknown-linux-musl/watchexec /usr/bin/
 
 RUN useradd builduser
+RUN mkdir -p /home/builduser/build && chown builduser /home/builduser/build
 
 USER builduser
 

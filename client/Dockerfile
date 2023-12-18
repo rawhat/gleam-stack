@@ -17,8 +17,15 @@ ENV PATH="/usr/local/lib/nodejs/node-v$NODE_VERSION-linux-x64/bin:$PATH"
 
 RUN useradd builduser
 
-USER builduser
+RUN mkdir -p /home/builduser/build && mkdir -p /home/builduser/node_modules && chown builduser:builduser /home/builduser/build && chown builduser:builduser /home/builduser/node_modules
 
 WORKDIR /home/builduser
+
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+
+USER builduser
 
 CMD ["npx", "vite", "dev", "--port", "4000", "--host", "0.0.0.0"]

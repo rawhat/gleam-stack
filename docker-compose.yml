@@ -13,6 +13,7 @@ services:
       - DB_NAME=sample
     volumes:
       - "./server:/home/builduser"
+      - server_build:/home/builduser/build/
     depends_on:
       - db
   client:
@@ -22,6 +23,8 @@ services:
       - 4000:4000
     volumes:
       - "./client:/home/builduser"
+      - client_build:/home/builduser/build/
+      - node_modules:/home/builduser/node_modules/
   db:
     image: postgres:16.0
     ports:
@@ -33,3 +36,6 @@ services:
       - "data:/var/lib/postgresql/data"
 volumes:
   data:
+  server_build:
+  client_build:
+  node_modules:
