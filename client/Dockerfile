@@ -1,6 +1,6 @@
 FROM erlang:26.1.1-slim
 
-ENV GLEAM_VERSION 0.32.4
+ENV GLEAM_VERSION 0.33.0
 ENV NODE_VERSION 20.10.0
 
 RUN apt update && apt install -y ca-certificates xz-utils

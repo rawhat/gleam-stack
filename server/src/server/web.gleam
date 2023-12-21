@@ -1,8 +1,8 @@
 import gleam/dynamic
-import gleam/http/request.{Request}
+import gleam/http/request.{type Request}
 import gleam/io
-import gleam/pgo.{Connection as DbConnection}
-import wisp.{Connection}
+import gleam/pgo.{type Connection as DbConnection}
+import wisp.{type Connection}
 
 pub fn handle_request(
   req: Request(Connection),

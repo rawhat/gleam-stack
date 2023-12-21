@@ -2,7 +2,7 @@ import gleam/dynamic
 import gleam/erlang/os
 import gleam/list
 import gleam/option.{Some}
-import gleam/pgo.{Connection}
+import gleam/pgo.{type Connection}
 
 pub fn connect() -> Connection {
   let assert Ok(host) = os.get_env("DB_HOST")

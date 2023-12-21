@@ -11,6 +11,7 @@ services:
       - DB_USER=sample
       - DB_PASS=password
       - DB_NAME=sample
+      - SECRET_KEY=changeme
     volumes:
       - "./server:/home/builduser"
       - server_build:/home/builduser/build/

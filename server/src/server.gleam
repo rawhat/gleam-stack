@@ -1,4 +1,5 @@
 import gleam/erlang.{priv_directory}
+import gleam/erlang/os
 import gleam/erlang/process
 import server/database
 import server/web
@@ -11,7 +12,7 @@ pub fn main() {
   let db = database.connect()
   let assert Ok(Nil) = database.migrate(db)
 
-  let secret_key = wisp.random_string(64)
+  let assert Ok(secret_key) = os.get_env("SECRET_KEY")
 
   let router = web.handle_request(_, db, priv)
 
