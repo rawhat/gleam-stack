@@ -1,7 +1,7 @@
 import lustre
 import lustre/attribute.{attribute}
 import lustre/element.{type Element, text}
-import lustre/element/html.{div, p}
+import lustre/element/html.{div, span}
 
 pub fn main() {
   let app = lustre.simple(fn(_) { Nil }, fn(model, _msg) { model }, view)
@@ -9,9 +9,16 @@ pub fn main() {
 }
 
 fn view(_model: Nil) -> Element(Nil) {
-  div([attribute.style([#("width", "100vw"), #("height", "100vh")])], [
-    p([attribute.class("h-full"), attribute.class("w-full")], [
-      text("Hello, world!"),
-    ]),
-  ])
+  div(
+    [
+      attribute.class(
+        "container mx-auto h-screen flex justify-center items-center",
+      ),
+    ],
+    [
+      span([attribute.class("text-3xl text-fuchsia-300 font-mono")], [
+        text("✨ you're up and running ✨"),
+      ]),
+    ],
+  )
 }
